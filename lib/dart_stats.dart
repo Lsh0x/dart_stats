@@ -6,3 +6,9 @@ library;
 
 // Errors
 export 'src/errors.dart';
+
+// Utils
+export 'src/utils/combinatorics.dart';
+export 'src/utils/constants.dart';
+export 'src/utils/numeric.dart';
+export 'src/utils/special_functions.dart';
