@@ -1,0 +1,20 @@
+name: dart_stats
+description: >-
+  Pure Dart statistics library. Descriptive stats, probability distributions
+  (fitting, CDF, PDF), linear regression, and hypothesis tests.
+  Zero dependencies. Port of rs-stats.
+version: 0.1.0
+repository: https://github.com/Lsh0x/dart_stats
+issue_tracker: https://github.com/Lsh0x/dart_stats/issues
+topics:
+  - statistics
+  - math
+  - regression
+  - distributions
+
+environment:
+  sdk: ^3.0.0
+
+dev_dependencies:
+  lints: ^5.1.0
+  test: ^1.25.0
