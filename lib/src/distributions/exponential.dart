@@ -22,9 +22,7 @@ class Exponential extends Distribution {
   /// MLE: lambda = 1 / mean(data). All values must be > 0.
   factory Exponential.fit(List<num> data) {
     if (data.isEmpty) {
-      throw const EmptyDataException(
-        'Exponential.fit requires non-empty data',
-      );
+      throw const EmptyDataException('Exponential.fit requires non-empty data');
     }
     for (final x in data) {
       if (x.toDouble() <= 0) {
@@ -72,9 +70,7 @@ class Exponential extends Distribution {
   @override
   double inverseCdf(double p) {
     if (p <= 0 || p >= 1) {
-      throw InvalidInputException(
-        'inverseCdf requires 0 < p < 1, got p=$p',
-      );
+      throw InvalidInputException('inverseCdf requires 0 < p < 1, got p=$p');
     }
     return -math.log(1.0 - p) / lambda;
   }

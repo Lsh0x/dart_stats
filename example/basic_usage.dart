@@ -34,8 +34,10 @@ void main() {
   print('Month 12:  ${reg.predict(12).toStringAsFixed(0)} (predicted)');
 
   final ci = reg.confidenceInterval(12, 0.95);
-  print('95% CI:    [${ci.lower.toStringAsFixed(0)}, '
-      '${ci.upper.toStringAsFixed(0)}]');
+  print(
+    '95% CI:    [${ci.lower.toStringAsFixed(0)}, '
+    '${ci.upper.toStringAsFixed(0)}]',
+  );
   print('');
 
   // ── Distribution fitting ───────────────────────────────────

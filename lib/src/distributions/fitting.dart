@@ -49,7 +49,8 @@ class KsResult {
   final double pValue;
 
   @override
-  String toString() => 'KsResult(D=${statistic.toStringAsFixed(4)}, '
+  String toString() =>
+      'KsResult(D=${statistic.toStringAsFixed(4)}, '
       'p=${pValue.toStringAsFixed(4)})';
 }
 
@@ -73,12 +74,7 @@ List<FitResult> fitAll(List<num> data) {
       final bic = dist.bic(data);
       if (!aic.isNaN && !aic.isInfinite) {
         results.add(
-          FitResult(
-            name: dist.name,
-            aic: aic,
-            bic: bic,
-            distribution: dist,
-          ),
+          FitResult(name: dist.name, aic: aic, bic: bic, distribution: dist),
         );
       }
     } on StatsException {

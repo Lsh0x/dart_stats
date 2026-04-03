@@ -111,10 +111,7 @@ void main() {
       });
 
       test('fit empty throws', () {
-        expect(
-          () => LogNormal.fit([]),
-          throwsA(isA<EmptyDataException>()),
-        );
+        expect(() => LogNormal.fit([]), throwsA(isA<EmptyDataException>()));
       });
     });
 

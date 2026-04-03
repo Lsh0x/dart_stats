@@ -8,10 +8,7 @@ void main() {
     group('fitAll', () {
       test('returns results sorted by AIC', () {
         final rng = math.Random(42);
-        final data = List.generate(
-          200,
-          (_) => 5.0 + 2.0 * _boxMullerZ(rng),
-        );
+        final data = List.generate(200, (_) => 5.0 + 2.0 * _boxMullerZ(rng));
         final results = fitAll(data);
         expect(results, isNotEmpty);
 
@@ -23,10 +20,7 @@ void main() {
 
       test('Normal data → Normal wins', () {
         final rng = math.Random(42);
-        final data = List.generate(
-          500,
-          (_) => 10.0 + 3.0 * _boxMullerZ(rng),
-        );
+        final data = List.generate(500, (_) => 10.0 + 3.0 * _boxMullerZ(rng));
         final results = fitAll(data);
         expect(results.first.name, 'Normal');
       });
@@ -50,10 +44,7 @@ void main() {
     group('fitBest', () {
       test('returns single best result', () {
         final rng = math.Random(42);
-        final data = List.generate(
-          200,
-          (_) => 5.0 + 2.0 * _boxMullerZ(rng),
-        );
+        final data = List.generate(200, (_) => 5.0 + 2.0 * _boxMullerZ(rng));
         final best = fitBest(data);
         expect(best.name, isNotEmpty);
         expect(best.distribution, isA<Distribution>());
@@ -63,10 +54,7 @@ void main() {
     group('autoFit', () {
       test('normal data → Normal', () {
         final rng = math.Random(42);
-        final data = List.generate(
-          500,
-          (_) => 10.0 + 3.0 * _boxMullerZ(rng),
-        );
+        final data = List.generate(500, (_) => 10.0 + 3.0 * _boxMullerZ(rng));
         final result = autoFit(data);
         expect(result.name, 'Normal');
       });
@@ -85,10 +73,7 @@ void main() {
     group('ksTest', () {
       test('good fit → high p-value', () {
         final rng = math.Random(42);
-        final data = List.generate(
-          200,
-          (_) => 5.0 + 2.0 * _boxMullerZ(rng),
-        );
+        final data = List.generate(200, (_) => 5.0 + 2.0 * _boxMullerZ(rng));
         final fitted = Normal.fit(data);
         final result = ksTest(data, fitted.cdf);
         expect(result.pValue, greaterThan(0.05));
@@ -99,20 +84,14 @@ void main() {
       test('bad fit → low p-value', () {
         final rng = math.Random(42);
         // Exponential data tested against Normal CDF
-        final data = List.generate(
-          200,
-          (_) => -math.log(rng.nextDouble()),
-        );
+        final data = List.generate(200, (_) => -math.log(rng.nextDouble()));
         final wrongFit = Normal(mu: 0, sigma: 1);
         final result = ksTest(data, wrongFit.cdf);
         expect(result.pValue, lessThan(0.05));
       });
 
       test('empty data throws', () {
-        expect(
-          () => ksTest([], (x) => x),
-          throwsA(isA<EmptyDataException>()),
-        );
+        expect(() => ksTest([], (x) => x), throwsA(isA<EmptyDataException>()));
       });
     });
   });

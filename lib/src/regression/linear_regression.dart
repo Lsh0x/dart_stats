@@ -32,8 +32,8 @@ class LinearRegression {
     required this.n,
     required double xMean,
     required double sxx,
-  })  : _xMean = xMean,
-        _sxx = sxx;
+  }) : _xMean = xMean,
+       _sxx = sxx;
 
   /// Fits a linear regression model to ([x], [y]) data.
   ///
@@ -132,8 +132,9 @@ class LinearRegression {
   double predict(double x) => slope * x + intercept;
 
   /// Predicts y for multiple x values.
-  List<double> predictMany(List<num> xs) =>
-      [for (final x in xs) predict(x.toDouble())];
+  List<double> predictMany(List<num> xs) => [
+    for (final x in xs) predict(x.toDouble()),
+  ];
 
   /// Confidence interval for the predicted mean at [x].
   ///
@@ -162,26 +163,22 @@ class LinearRegression {
 
   /// Serializes to JSON.
   Map<String, dynamic> toJson() => {
-        'slope': slope,
-        'intercept': intercept,
-        'rSquared': rSquared,
-        'standardError': standardError,
-        'n': n,
-        'xMean': _xMean,
-        'sxx': _sxx,
-      };
+    'slope': slope,
+    'intercept': intercept,
+    'rSquared': rSquared,
+    'standardError': standardError,
+    'n': n,
+    'xMean': _xMean,
+    'sxx': _sxx,
+  };
 
   @override
-  String toString() => 'LinearRegression(y = ${slope.toStringAsFixed(4)}x + '
+  String toString() =>
+      'LinearRegression(y = ${slope.toStringAsFixed(4)}x + '
       '${intercept.toStringAsFixed(4)}, r²=${rSquared.toStringAsFixed(4)})';
 
   /// Sum of squared errors.
-  static double _sse(
-    List<num> x,
-    List<num> y,
-    double slope,
-    double intercept,
-  ) {
+  static double _sse(List<num> x, List<num> y, double slope, double intercept) {
     var sse = 0.0;
     for (var i = 0; i < x.length; i++) {
       final residual = y[i].toDouble() - (slope * x[i].toDouble() + intercept);

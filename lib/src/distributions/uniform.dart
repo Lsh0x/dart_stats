@@ -75,9 +75,7 @@ class Uniform extends Distribution {
   @override
   double inverseCdf(double p) {
     if (p <= 0 || p >= 1) {
-      throw InvalidInputException(
-        'inverseCdf requires 0 < p < 1, got p=$p',
-      );
+      throw InvalidInputException('inverseCdf requires 0 < p < 1, got p=$p');
     }
     return min + p * (max - min);
   }

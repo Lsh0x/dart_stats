@@ -63,19 +63,13 @@ void main() {
 
     group('predict', () {
       test('predict on perfect line', () {
-        final reg = LinearRegression.fit(
-          [1.0, 2.0, 3.0],
-          [2.0, 4.0, 6.0],
-        );
+        final reg = LinearRegression.fit([1.0, 2.0, 3.0], [2.0, 4.0, 6.0]);
         expect(reg.predict(4), closeTo(8.0, 1e-10));
         expect(reg.predict(0), closeTo(0.0, 1e-10));
       });
 
       test('predictMany', () {
-        final reg = LinearRegression.fit(
-          [1.0, 2.0, 3.0],
-          [2.0, 4.0, 6.0],
-        );
+        final reg = LinearRegression.fit([1.0, 2.0, 3.0], [2.0, 4.0, 6.0]);
         final predictions = reg.predictMany([4, 5, 6]);
         expect(predictions[0], closeTo(8.0, 1e-10));
         expect(predictions[1], closeTo(10.0, 1e-10));
@@ -85,18 +79,12 @@ void main() {
 
     group('correlationCoefficient', () {
       test('perfect positive → r = 1', () {
-        final reg = LinearRegression.fit(
-          [1.0, 2.0, 3.0],
-          [2.0, 4.0, 6.0],
-        );
+        final reg = LinearRegression.fit([1.0, 2.0, 3.0], [2.0, 4.0, 6.0]);
         expect(reg.correlationCoefficient, closeTo(1.0, 1e-10));
       });
 
       test('perfect negative → r = -1', () {
-        final reg = LinearRegression.fit(
-          [1.0, 2.0, 3.0],
-          [6.0, 4.0, 2.0],
-        );
+        final reg = LinearRegression.fit([1.0, 2.0, 3.0], [6.0, 4.0, 2.0]);
         expect(reg.correlationCoefficient, closeTo(-1.0, 1e-10));
       });
     });
@@ -132,10 +120,7 @@ void main() {
         );
         final ci95 = reg.confidenceInterval(3, 0.95);
         final ci99 = reg.confidenceInterval(3, 0.99);
-        expect(
-          ci99.upper - ci99.lower,
-          greaterThan(ci95.upper - ci95.lower),
-        );
+        expect(ci99.upper - ci99.lower, greaterThan(ci95.upper - ci95.lower));
       });
     });
 
@@ -149,10 +134,7 @@ void main() {
       });
 
       test('is 0 for perfect fit', () {
-        final reg = LinearRegression.fit(
-          [1.0, 2.0, 3.0],
-          [2.0, 4.0, 6.0],
-        );
+        final reg = LinearRegression.fit([1.0, 2.0, 3.0], [2.0, 4.0, 6.0]);
         expect(reg.standardError, closeTo(0.0, 1e-10));
       });
     });

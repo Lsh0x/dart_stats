@@ -75,10 +75,7 @@ void main() {
 
     group('logpdf', () {
       test('logpdf(x) == ln(pdf(x))', () {
-        expect(
-          std.logpdf(1.5),
-          closeTo(math.log(std.pdf(1.5)), 1e-10),
-        );
+        expect(std.logpdf(1.5), closeTo(math.log(std.pdf(1.5)), 1e-10));
       });
     });
 
@@ -124,14 +121,8 @@ void main() {
       });
 
       test('p outside (0,1) throws', () {
-        expect(
-          () => std.inverseCdf(0),
-          throwsA(isA<InvalidInputException>()),
-        );
-        expect(
-          () => std.inverseCdf(1),
-          throwsA(isA<InvalidInputException>()),
-        );
+        expect(() => std.inverseCdf(0), throwsA(isA<InvalidInputException>()));
+        expect(() => std.inverseCdf(1), throwsA(isA<InvalidInputException>()));
       });
     });
 
@@ -139,10 +130,7 @@ void main() {
       test('fit recovers parameters', () {
         // Generate data with known parameters
         final rng = math.Random(42);
-        final data = List.generate(
-          1000,
-          (_) => 5.0 + 2.0 * _boxMullerZ(rng),
-        );
+        final data = List.generate(1000, (_) => 5.0 + 2.0 * _boxMullerZ(rng));
         final fitted = Normal.fit(data);
         expect(fitted.mu, closeTo(5.0, 0.2));
         expect(fitted.sigma, closeTo(2.0, 0.2));

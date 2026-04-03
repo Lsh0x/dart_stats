@@ -37,14 +37,8 @@ void main() {
 
     test('all exceptions are StatsException', () {
       expect(const EmptyDataException(), isA<StatsException>());
-      expect(
-        const InvalidInputException('x'),
-        isA<StatsException>(),
-      );
-      expect(
-        const DimensionMismatchException('x'),
-        isA<StatsException>(),
-      );
+      expect(const InvalidInputException('x'), isA<StatsException>());
+      expect(const DimensionMismatchException('x'), isA<StatsException>());
       expect(const NumericalException('x'), isA<StatsException>());
       expect(const NotFittedException(), isA<StatsException>());
     });

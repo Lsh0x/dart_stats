@@ -21,9 +21,7 @@ double zScore(double x, double avg, double sd) {
 /// Throws [EmptyDataException] if [data] is empty.
 List<double> zScores(List<num> data) {
   if (data.isEmpty) {
-    throw const EmptyDataException(
-      'Cannot compute z-scores of empty list',
-    );
+    throw const EmptyDataException('Cannot compute z-scores of empty list');
   }
   final avg = mean(data);
   final sd = stdDev(data);
