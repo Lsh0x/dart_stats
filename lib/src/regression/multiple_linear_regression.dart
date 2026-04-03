@@ -204,7 +204,7 @@ class MultipleLinearRegression {
 
   @override
   String toString() {
-    final terms = <String>['${intercept.toStringAsFixed(4)}'];
+    final terms = <String>[intercept.toStringAsFixed(4)];
     for (var i = 0; i < coefficients.length; i++) {
       terms.add('${coefficients[i].toStringAsFixed(4)}·x${i + 1}');
     }

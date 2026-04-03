@@ -12,26 +12,24 @@ export 'src/descriptive/std_err.dart';
 export 'src/descriptive/variance.dart';
 export 'src/descriptive/z_score.dart';
 
-// Distributions — continuous
+// Distributions
 export 'src/distributions/beta.dart';
+export 'src/distributions/binomial.dart';
 export 'src/distributions/chi_squared.dart';
+export 'src/distributions/discrete_distribution.dart';
 export 'src/distributions/distribution.dart';
 export 'src/distributions/exponential.dart';
 export 'src/distributions/f_distribution.dart';
 export 'src/distributions/fitting.dart';
 export 'src/distributions/gamma.dart';
+export 'src/distributions/geometric.dart';
 export 'src/distributions/lognormal.dart';
+export 'src/distributions/negative_binomial.dart';
 export 'src/distributions/normal.dart';
+export 'src/distributions/poisson.dart';
 export 'src/distributions/student_t.dart';
 export 'src/distributions/uniform.dart';
 export 'src/distributions/weibull.dart';
-
-// Distributions — discrete
-export 'src/distributions/binomial.dart';
-export 'src/distributions/discrete_distribution.dart';
-export 'src/distributions/geometric.dart';
-export 'src/distributions/negative_binomial.dart';
-export 'src/distributions/poisson.dart';
 
 // Errors
 export 'src/errors.dart';

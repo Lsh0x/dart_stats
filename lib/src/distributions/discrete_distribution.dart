@@ -22,7 +22,8 @@ abstract class DiscreteDistribution {
   /// Cumulative distribution function: P(X <= [k]).
   double cdf(int k);
 
-  /// Inverse CDF (quantile function). Returns smallest k such that CDF(k) >= [p].
+  /// Inverse CDF (quantile function).
+  /// Returns smallest k such that CDF(k) >= [p].
   int inverseCdf(double p);
 
   /// Distribution mean.

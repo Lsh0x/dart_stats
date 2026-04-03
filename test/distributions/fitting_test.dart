@@ -261,7 +261,7 @@ void main() {
       });
 
       test('KsResult toString', () {
-        final r = KsResult(statistic: 0.05, pValue: 0.9);
+        const r = KsResult(statistic: 0.05, pValue: 0.9);
         expect(r.toString(), contains('D='));
         expect(r.toString(), contains('p='));
       });

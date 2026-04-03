@@ -11,7 +11,8 @@ import 'discrete_distribution.dart';
 class NegativeBinomial extends DiscreteDistribution {
   /// Creates a Negative Binomial distribution.
   ///
-  /// [r] is the number of successes (> 0), [p] is the success probability in (0, 1].
+  /// [r] is the number of successes (> 0),
+  /// [p] is the success probability in (0, 1].
   NegativeBinomial({required this.r, required this.p}) {
     if (r <= 0) {
       throw InvalidInputException(

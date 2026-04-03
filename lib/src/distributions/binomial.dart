@@ -63,7 +63,7 @@ class Binomial extends DiscreteDistribution {
   @override
   double logpmf(int k) {
     if (k < 0 || k > n) return double.negativeInfinity;
-    // Use lnGamma for numerical stability: ln(C(n,k)) = lnGamma(n+1) - lnGamma(k+1) - lnGamma(n-k+1)
+    // ln(C(n,k)) = lnGamma(n+1) - lnGamma(k+1) - lnGamma(n-k+1)
     return lnGamma(n + 1.0) -
         lnGamma(k + 1.0) -
         lnGamma(n - k + 1.0) +
