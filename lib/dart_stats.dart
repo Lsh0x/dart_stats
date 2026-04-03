@@ -37,6 +37,8 @@ export 'src/distributions/poisson.dart';
 export 'src/errors.dart';
 
 // Hypothesis tests
+export 'src/hypothesis/anova.dart';
+export 'src/hypothesis/chi_square.dart';
 export 'src/hypothesis/t_test.dart';
 
 // Regression
