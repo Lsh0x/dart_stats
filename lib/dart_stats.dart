@@ -43,9 +43,11 @@ export 'src/hypothesis/t_test.dart';
 
 // Regression
 export 'src/regression/linear_regression.dart';
+export 'src/regression/multiple_linear_regression.dart';
 
 // Utils
 export 'src/utils/combinatorics.dart';
 export 'src/utils/constants.dart';
+export 'src/utils/matrix.dart';
 export 'src/utils/numeric.dart';
 export 'src/utils/special_functions.dart';
