@@ -16,6 +16,7 @@ export 'src/descriptive/z_score.dart';
 export 'src/distributions/distribution.dart';
 export 'src/distributions/exponential.dart';
 export 'src/distributions/fitting.dart';
+export 'src/distributions/gamma.dart';
 export 'src/distributions/lognormal.dart';
 export 'src/distributions/normal.dart';
 export 'src/distributions/uniform.dart';
