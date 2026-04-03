@@ -124,37 +124,34 @@ double _gammaSeries(double a, double x) {
 }
 
 /// Continued fraction for Q(a, x) = 1 - P(a, x).
-/// Uses Lentz's algorithm.
+/// Uses the standard Numerical Recipes algorithm (modified Lentz's method).
 double _gammaContinuedFraction(double a, double x) {
   final lnGammaA = lnGamma(a);
   const tiny = 1e-30;
 
-  var f = tiny;
-  var c = f;
-  var d = 0.0;
+  var b = x + 1.0 - a;
+  var c = 1.0 / tiny;
+  var d = 1.0 / b;
+  var h = d;
 
-  for (var n = 1; n < 200; n++) {
-    final an = n.isOdd
-        ? ((n + 1) ~/ 2)
-              .toDouble() // (n+1)/2 for odd n
-        : -(a - 1.0 + n ~/ 2); // -(a-1+n/2) for even n
+  for (var i = 1; i < 200; i++) {
+    final an = -i * (i - a);
+    b += 2.0;
 
-    final bn = n == 1 ? x + 1.0 - a : x + 2.0 * n - 1.0 - a;
-
-    d = bn + an * d;
+    d = an * d + b;
     if (d.abs() < tiny) d = tiny;
     d = 1.0 / d;
 
-    c = bn + an / c;
+    c = b + an / c;
     if (c.abs() < tiny) c = tiny;
 
-    final delta = c * d;
-    f *= delta;
+    final delta = d * c;
+    h *= delta;
 
     if ((delta - 1.0).abs() < 1e-14) break;
   }
 
-  return f * math.exp(-x + a * math.log(x) - lnGammaA);
+  return h * math.exp(-x + a * math.log(x) - lnGammaA);
 }
 
 /// Beta function B(a, b) = Γ(a)Γ(b) / Γ(a+b).
