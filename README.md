@@ -23,7 +23,7 @@ dependencies:
   dart_stats:
     git:
       url: https://github.com/Lsh0x/dart_stats.git
-      ref: main
+      ref: v0.1.0
 ```
 
 ## Quick Start
