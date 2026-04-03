@@ -34,10 +34,7 @@ void main() {
       });
 
       test('variance = 1/lambda^2', () {
-        expect(
-          Exponential(lambda: 2).distVariance,
-          closeTo(0.25, 1e-10),
-        );
+        expect(Exponential(lambda: 2).distVariance, closeTo(0.25, 1e-10));
       });
 
       test('name is Exponential', () {
@@ -102,10 +99,7 @@ void main() {
       });
 
       test('fit empty throws', () {
-        expect(
-          () => Exponential.fit([]),
-          throwsA(isA<EmptyDataException>()),
-        );
+        expect(() => Exponential.fit([]), throwsA(isA<EmptyDataException>()));
       });
 
       test('fit with non-positive values throws', () {

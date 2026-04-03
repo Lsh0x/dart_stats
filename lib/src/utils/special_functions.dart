@@ -73,7 +73,8 @@ double erf(double x) {
   final t4 = t3 * t;
   final t5 = t4 * t;
 
-  final y = 1.0 -
+  final y =
+      1.0 -
       (a1 * t + a2 * t2 + a3 * t3 + a4 * t4 + a5 * t5) * math.exp(-ax * ax);
 
   return sign * y;
@@ -134,7 +135,8 @@ double _gammaContinuedFraction(double a, double x) {
 
   for (var n = 1; n < 200; n++) {
     final an = n.isOdd
-        ? ((n + 1) ~/ 2).toDouble() // (n+1)/2 for odd n
+        ? ((n + 1) ~/ 2)
+              .toDouble() // (n+1)/2 for odd n
         : -(a - 1.0 + n ~/ 2); // -(a-1+n/2) for even n
 
     final bn = n == 1 ? x + 1.0 - a : x + 2.0 * n - 1.0 - a;
@@ -218,7 +220,8 @@ double _betaContinuedFraction(double a, double b, double x) {
     f *= c * d;
 
     // Odd step: d_{2m+1}
-    numerator = -(a + mDouble) *
+    numerator =
+        -(a + mDouble) *
         (a + b + mDouble) *
         x /
         ((a + 2.0 * mDouble) * (a + 2.0 * mDouble + 1.0));

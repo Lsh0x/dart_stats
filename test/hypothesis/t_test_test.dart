@@ -20,10 +20,7 @@ void main() {
     });
 
     test('empty data throws', () {
-      expect(
-        () => oneSampleTTest([], 0),
-        throwsA(isA<EmptyDataException>()),
-      );
+      expect(() => oneSampleTTest([], 0), throwsA(isA<EmptyDataException>()));
     });
 
     test('single element throws (no variance)', () {
@@ -78,17 +75,11 @@ void main() {
     });
 
     test('empty throws', () {
-      expect(
-        () => pairedTTest([], []),
-        throwsA(isA<EmptyDataException>()),
-      );
+      expect(() => pairedTTest([], []), throwsA(isA<EmptyDataException>()));
     });
 
     test('single pair throws', () {
-      expect(
-        () => pairedTTest([1], [2]),
-        throwsA(isA<EmptyDataException>()),
-      );
+      expect(() => pairedTTest([1], [2]), throwsA(isA<EmptyDataException>()));
     });
   });
 

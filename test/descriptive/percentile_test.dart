@@ -65,10 +65,7 @@ void main() {
     });
 
     test('empty throws', () {
-      expect(
-        () => percentile([], 0.5),
-        throwsA(isA<EmptyDataException>()),
-      );
+      expect(() => percentile([], 0.5), throwsA(isA<EmptyDataException>()));
     });
   });
 

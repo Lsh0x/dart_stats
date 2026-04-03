@@ -16,17 +16,11 @@ void main() {
     });
 
     test('stdDev == 0 throws', () {
-      expect(
-        () => zScore(100, 100, 0),
-        throwsA(isA<InvalidInputException>()),
-      );
+      expect(() => zScore(100, 100, 0), throwsA(isA<InvalidInputException>()));
     });
 
     test('negative stdDev throws', () {
-      expect(
-        () => zScore(100, 100, -1),
-        throwsA(isA<InvalidInputException>()),
-      );
+      expect(() => zScore(100, 100, -1), throwsA(isA<InvalidInputException>()));
     });
   });
 

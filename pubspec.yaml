@@ -13,7 +13,7 @@ topics:
   - distributions
 
 environment:
-  sdk: ^3.0.0
+  sdk: ^3.11.0
 
 dev_dependencies:
   lints: ^5.1.0

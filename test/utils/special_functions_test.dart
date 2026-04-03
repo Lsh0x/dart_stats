@@ -93,10 +93,7 @@ void main() {
     });
 
     test('P(2, 1) ≈ 0.2642', () {
-      expect(
-        regularizedIncompleteGamma(2, 1),
-        closeTo(0.26424111765712, 1e-6),
-      );
+      expect(regularizedIncompleteGamma(2, 1), closeTo(0.26424111765712, 1e-6));
     });
 
     test('P(0.5, 1) ≈ 0.8427 (erf(1))', () {
@@ -133,10 +130,7 @@ void main() {
 
   group('regularizedIncompleteBeta', () {
     test('I(0.5, 0.5, 0.5) == 0.5', () {
-      expect(
-        regularizedIncompleteBeta(0.5, 0.5, 0.5),
-        closeTo(0.5, 1e-6),
-      );
+      expect(regularizedIncompleteBeta(0.5, 0.5, 0.5), closeTo(0.5, 1e-6));
     });
 
     test('I(1, 1, x) == x (uniform)', () {
@@ -154,10 +148,7 @@ void main() {
 
     test('I(2, 5, 0.4) known value', () {
       // Precomputed: ≈ 0.76672
-      expect(
-        regularizedIncompleteBeta(2, 5, 0.4),
-        closeTo(0.76672, 1e-4),
-      );
+      expect(regularizedIncompleteBeta(2, 5, 0.4), closeTo(0.76672, 1e-4));
     });
   });
 

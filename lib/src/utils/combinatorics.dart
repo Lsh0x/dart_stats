@@ -30,9 +30,7 @@ const List<int> _factorialTable = [
 /// Valid for 0 ≤ n ≤ 20. Throws [InvalidInputException] otherwise.
 int factorial(int n) {
   if (n < 0 || n > 20) {
-    throw InvalidInputException(
-      'factorial(n) requires 0 <= n <= 20, got n=$n',
-    );
+    throw InvalidInputException('factorial(n) requires 0 <= n <= 20, got n=$n');
   }
   return _factorialTable[n];
 }
@@ -47,9 +45,7 @@ int permutation(int n, int k) {
     );
   }
   if (k > n) {
-    throw InvalidInputException(
-      'permutation requires k <= n, got n=$n, k=$k',
-    );
+    throw InvalidInputException('permutation requires k <= n, got n=$n, k=$k');
   }
   var result = 1;
   for (var i = n; i > n - k; i--) {
@@ -69,9 +65,7 @@ int combination(int n, int k) {
     );
   }
   if (k > n) {
-    throw InvalidInputException(
-      'combination requires k <= n, got n=$n, k=$k',
-    );
+    throw InvalidInputException('combination requires k <= n, got n=$n, k=$k');
   }
   // Symmetry optimization
   var kk = k;

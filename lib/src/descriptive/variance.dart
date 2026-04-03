@@ -5,9 +5,7 @@ import '../errors.dart';
 /// Divides by n. Throws [EmptyDataException] if [data] is empty.
 double variance(List<num> data) {
   if (data.isEmpty) {
-    throw const EmptyDataException(
-      'Cannot compute variance of empty list',
-    );
+    throw const EmptyDataException('Cannot compute variance of empty list');
   }
   var mean = 0.0;
   var m2 = 0.0;

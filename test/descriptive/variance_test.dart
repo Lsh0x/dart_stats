@@ -5,10 +5,7 @@ void main() {
   group('variance (population)', () {
     test('known dataset', () {
       // [2,4,4,4,5,5,7,9] → population variance = 4.0
-      expect(
-        variance([2, 4, 4, 4, 5, 5, 7, 9]),
-        closeTo(4.0, 1e-10),
-      );
+      expect(variance([2, 4, 4, 4, 5, 5, 7, 9]), closeTo(4.0, 1e-10));
     });
 
     test('identical values → 0', () {
@@ -39,17 +36,11 @@ void main() {
     });
 
     test('single element throws (n-1 = 0)', () {
-      expect(
-        () => sampleVariance([42]),
-        throwsA(isA<EmptyDataException>()),
-      );
+      expect(() => sampleVariance([42]), throwsA(isA<EmptyDataException>()));
     });
 
     test('empty list throws', () {
-      expect(
-        () => sampleVariance([]),
-        throwsA(isA<EmptyDataException>()),
-      );
+      expect(() => sampleVariance([]), throwsA(isA<EmptyDataException>()));
     });
   });
 }

@@ -76,16 +76,9 @@ class Normal extends Distribution {
   @override
   double inverseCdf(double p) {
     if (p <= 0 || p >= 1) {
-      throw InvalidInputException(
-        'inverseCdf requires 0 < p < 1, got p=$p',
-      );
+      throw InvalidInputException('inverseCdf requires 0 < p < 1, got p=$p');
     }
-    return bisectInverseCdf(
-      cdf,
-      p,
-      lo: mu - 10 * sigma,
-      hi: mu + 10 * sigma,
-    );
+    return bisectInverseCdf(cdf, p, lo: mu - 10 * sigma, hi: mu + 10 * sigma);
   }
 
   @override

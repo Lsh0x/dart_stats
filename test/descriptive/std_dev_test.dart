@@ -22,17 +22,11 @@ void main() {
   group('sampleStdDev', () {
     test('equals sqrt(sampleVariance)', () {
       final data = [2.0, 4.0, 4.0, 4.0, 5.0, 5.0, 7.0, 9.0];
-      expect(
-        sampleStdDev(data),
-        closeTo(math.sqrt(32.0 / 7.0), 1e-10),
-      );
+      expect(sampleStdDev(data), closeTo(math.sqrt(32.0 / 7.0), 1e-10));
     });
 
     test('single element throws', () {
-      expect(
-        () => sampleStdDev([42]),
-        throwsA(isA<EmptyDataException>()),
-      );
+      expect(() => sampleStdDev([42]), throwsA(isA<EmptyDataException>()));
     });
   });
 }

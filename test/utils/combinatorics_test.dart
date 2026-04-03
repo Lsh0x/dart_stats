@@ -50,10 +50,7 @@ void main() {
     });
 
     test('P(-1,2) throws', () {
-      expect(
-        () => permutation(-1, 2),
-        throwsA(isA<InvalidInputException>()),
-      );
+      expect(() => permutation(-1, 2), throwsA(isA<InvalidInputException>()));
     });
   });
 

@@ -17,14 +17,10 @@ double iqr(List<num> data) => percentile(data, 0.75) - percentile(data, 0.25);
 /// Throws [InvalidInputException] if [p] is outside [0, 1].
 double percentile(List<num> data, double p) {
   if (data.isEmpty) {
-    throw const EmptyDataException(
-      'Cannot compute percentile of empty list',
-    );
+    throw const EmptyDataException('Cannot compute percentile of empty list');
   }
   if (p < 0 || p > 1) {
-    throw InvalidInputException(
-      'Percentile p must be in [0, 1], got p=$p',
-    );
+    throw InvalidInputException('Percentile p must be in [0, 1], got p=$p');
   }
 
   final sorted = [...data]..sort();

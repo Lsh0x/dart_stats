@@ -29,17 +29,11 @@ void main() {
 
     group('properties', () {
       test('mean = (min+max)/2', () {
-        expect(
-          Uniform(min: 2, max: 8).distMean,
-          closeTo(5.0, 1e-10),
-        );
+        expect(Uniform(min: 2, max: 8).distMean, closeTo(5.0, 1e-10));
       });
 
       test('variance = (max-min)^2/12', () {
-        expect(
-          Uniform(min: 0, max: 12).distVariance,
-          closeTo(12.0, 1e-10),
-        );
+        expect(Uniform(min: 0, max: 12).distVariance, closeTo(12.0, 1e-10));
       });
 
       test('name is Uniform', () {
@@ -104,17 +98,11 @@ void main() {
       });
 
       test('fit empty throws', () {
-        expect(
-          () => Uniform.fit([]),
-          throwsA(isA<EmptyDataException>()),
-        );
+        expect(() => Uniform.fit([]), throwsA(isA<EmptyDataException>()));
       });
 
       test('fit single element throws', () {
-        expect(
-          () => Uniform.fit([5]),
-          throwsA(isA<EmptyDataException>()),
-        );
+        expect(() => Uniform.fit([5]), throwsA(isA<EmptyDataException>()));
       });
     });
   });

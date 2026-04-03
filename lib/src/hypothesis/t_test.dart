@@ -83,9 +83,7 @@ TTestResult oneSampleTTest(List<num> data, double mu) {
 /// against mu=0. Requires same length, at least 2 pairs.
 TTestResult pairedTTest(List<num> before, List<num> after) {
   if (before.isEmpty || after.isEmpty) {
-    throw const EmptyDataException(
-      'Paired t-test requires non-empty data',
-    );
+    throw const EmptyDataException('Paired t-test requires non-empty data');
   }
   if (before.length != after.length) {
     throw DimensionMismatchException(
@@ -94,9 +92,7 @@ TTestResult pairedTTest(List<num> before, List<num> after) {
     );
   }
   if (before.length < 2) {
-    throw const EmptyDataException(
-      'Paired t-test requires at least 2 pairs',
-    );
+    throw const EmptyDataException('Paired t-test requires at least 2 pairs');
   }
 
   final diffs = <double>[

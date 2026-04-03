@@ -11,9 +11,7 @@ sealed class StatsException implements Exception {
 
 /// Thrown when input data is empty or has insufficient elements.
 class EmptyDataException extends StatsException {
-  const EmptyDataException([
-    super.message = 'Data must not be empty',
-  ]);
+  const EmptyDataException([super.message = 'Data must not be empty']);
 }
 
 /// Thrown when input parameters are invalid.
@@ -33,7 +31,5 @@ class NumericalException extends StatsException {
 
 /// Thrown when a model is used before fitting.
 class NotFittedException extends StatsException {
-  const NotFittedException([
-    super.message = 'Model must be fitted before use',
-  ]);
+  const NotFittedException([super.message = 'Model must be fitted before use']);
 }

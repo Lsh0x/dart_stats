@@ -11,9 +11,7 @@ bool approxEqual(double a, double b, {double epsilon = 1e-10}) =>
 /// Returns ln(x), throwing [InvalidInputException] if x ≤ 0.
 double safeLog(double x) {
   if (x <= 0) {
-    throw InvalidInputException(
-      'safeLog requires x > 0, got x=$x',
-    );
+    throw InvalidInputException('safeLog requires x > 0, got x=$x');
   }
   return math.log(x);
 }
