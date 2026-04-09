@@ -1,16 +1,22 @@
 /// Pure Dart statistics library.
 ///
 /// Provides descriptive statistics, probability distributions with fitting,
-/// linear regression, and hypothesis tests. Zero dependencies.
+/// linear regression, hypothesis tests, divergence measures, bootstrap
+/// resampling, time-series primitives, and forecast scoring. Zero dependencies.
 library;
 
 // Descriptive statistics
 export 'src/descriptive/average.dart';
+export 'src/descriptive/inequality.dart';
 export 'src/descriptive/percentile.dart';
+export 'src/descriptive/robust.dart';
 export 'src/descriptive/std_dev.dart';
 export 'src/descriptive/std_err.dart';
 export 'src/descriptive/variance.dart';
 export 'src/descriptive/z_score.dart';
+
+// Divergence measures
+export 'src/divergence/divergence.dart';
 
 // Distributions
 export 'src/distributions/beta.dart';
@@ -42,6 +48,16 @@ export 'src/hypothesis/t_test.dart';
 // Regression
 export 'src/regression/linear_regression.dart';
 export 'src/regression/multiple_linear_regression.dart';
+
+// Resampling
+export 'src/resampling/bootstrap.dart';
+
+// Scoring
+export 'src/scoring/pinball.dart';
+
+// Time-series
+export 'src/timeseries/cusum.dart';
+export 'src/timeseries/ewma.dart';
 
 // Utils
 export 'src/utils/combinatorics.dart';
